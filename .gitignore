@@ -1,0 +1,5 @@
+node_modules/
+build/
+script/git_diff.log
+.idea/
+*.rar

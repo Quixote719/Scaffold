@@ -1,0 +1,17 @@
+@import '../siteStyle/vars.less';
+
+.fontClass {
+    font-size: 14px;
+    color: white;
+}
+
+.left:extend(.fontClass){
+    @extend .fontClass;
+    float: left;
+    margin-left: @site-btn-margin;
+}
+
+.right:extend(.fontClass) {
+    float: right;
+    margin-right: @site-btn-margin;
+}

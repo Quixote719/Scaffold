@@ -1,0 +1,70 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "jsdoc"
+  ],
+  "globals": {
+    "CACHE_MODE": false
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "no-useless-escape": "off",
+    "indent": [
+      "error",
+      4,
+      {"SwitchCase": 1}
+    ],
+    //        "linebreak-style": [
+    //            "error",
+    //            "windows"
+    //        ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "no-console": "off",
+    "valid-jsdoc": [2,
+      {
+        //"prefer":true,//强制使用一致的文档标签,而不使用别名 "prefer": { "arg": "param", "argument": "param", "class": "constructor", "return": "returns", "virtual": "abstract" } 比如"return": "returns" @returns 和 @return只能使用 @returns，这里不强制
+        //"preferType":true,//强制使用一致的类型字符串，比如"object": "Object",只能使用"Object"。"String": "string" 使用 string，"Boolean": "boolean"使用boolen，"Number": "number"使用number
+        "requireReturn": false,//非构造函数且函数或方法有一个return语句时，强制使用returns标签，true表示有没有return都要@returns,false表示只有在方法有return时才强制使用@returns标签注释
+        "requireReturnType": false,//针对返回标签，强制添加返回类型 不启用了，使用jsdoc的
+        "matchDescription": ".+",//强制注释中要有描述说明 .+正则表达式一定要有内容,需要说明的是注释开始的地方描述，可以省略@description标签
+        "requireParamDescription": false,//允许参数标签缺少描述，但是建议能加则添加
+        "requireReturnDescription": false //允许返回标签缺少描述，但是建议能加则添加
+      }
+    ],
+    "jsdoc/check-param-names": 2,//提示检查无效的参数名称
+    "jsdoc/check-tag-names": 1,//提示检查无效的标签
+    "jsdoc/check-types": 2,//报错检查类型是否正确 boolean number string Object Array Date RegExp
+    "jsdoc/newline-after-description": 0,//不提示描述后面有空行
+    "jsdoc/require-description-complete-sentence": 0,//不提示描述内容严格模式，大写开头，结束句号
+    "jsdoc/require-example": 0,//不提示要有例子标签内容
+    "jsdoc/require-hyphen-before-param-description": 0,//不提示 param标签的描述前加横杠
+    "jsdoc/require-param": 2,//报错检查一定需要参数标签
+    "jsdoc/require-param-description": 0,//允许参数标签缺少描述，但是建议能加则添加
+    "jsdoc/require-param-type": 2,//一定要强制有参数类型的设置
+    "jsdoc/require-returns-description": 0,//不提示返回结果带描述
+    "jsdoc/require-returns-type": 2 //报错检查返回结果要有类型描述
+  }
+}
